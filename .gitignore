@@ -21,6 +21,11 @@ Thumbs.db
 
 # Cursor / IDE metadata
 .cursor/
+!.cursor/plans/
+!.cursor/plans/buoi1/
+!.cursor/plans/buoi1/plan_buoi1.md
+!.cursor/plans/buoi2/
+!.cursor/plans/buoi2/plan_buoi2.md
 
 # ML artifacts (models, logs, checkpoints)
 *.pt
