@@ -1,0 +1,32 @@
+.# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Cursor / IDE metadata
+.cursor/
+
+# ML artifacts (models, logs, checkpoints)
+*.pt
+*.pth
+*.onnx
+runs/
+checkpoints/
+logs/
+
