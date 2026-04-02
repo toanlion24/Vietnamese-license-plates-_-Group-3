@@ -35,3 +35,11 @@ runs/
 checkpoints/
 logs/
 
+# Local dataset (large; do not commit — keep data/data.yaml as reference)
+datakangle/
+data/images/
+data/labels/
+data/migration_from_datakangle.json
+data/debug_aug/*
+!data/debug_aug/.gitkeep
+

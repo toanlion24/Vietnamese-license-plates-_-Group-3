@@ -1,0 +1,14 @@
+# YOLO dataset — bố cục buổi 2 (sau khi migrate từ datakangle).
+# Ảnh: data/images/raw/plate_XXXX.*
+# Nhãn: data/labels/raw/plate_XXXX.txt (một class: license_plate)
+# Ultralytics tìm nhãn bằng cách thay đoạn "images" → "labels" trong đường dẫn ảnh,
+# nên thư mục ảnh phải có tên chứa "images" (ở đây: .../images/raw/...).
+
+path: .
+train: data/splits/train.txt
+val: data/splits/val.txt
+test: data/splits/test.txt
+
+nc: 1
+names:
+  - license_plate
