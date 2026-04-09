@@ -1,0 +1,64 @@
+{
+  "group_name": "buoi4_experiments",
+  "preset": "quick2",
+  "data": "data\\data.yaml",
+  "epochs": 1,
+  "batch": 16,
+  "device": "cpu",
+  "runs": [
+    {
+      "tag": "y8n_416_default",
+      "run_name": "buoi4_experiments_y8n_416_default",
+      "weights_init": "yolov8n.pt",
+      "imgsz": 416,
+      "augment": null,
+      "results_csv": "experiments\\buoi4_experiments_y8n_416_default\\results.csv",
+      "weights_best": "D:\\ComputerVisionPj\\experiments\\buoi4_experiments_y8n_416_default\\weights\\best.pt",
+      "weights_last": "D:\\ComputerVisionPj\\experiments\\buoi4_experiments_y8n_416_default\\weights\\last.pt",
+      "metrics_last_epoch": {
+        "precision": 0.00309,
+        "recall": 0.80934,
+        "map50": 0.09983,
+        "map50_95": 0.07741,
+        "train_box_loss": 1.06906,
+        "train_cls_loss": 1.98823,
+        "train_dfl_loss": 0.99931,
+        "val_box_loss": 0.96207,
+        "val_cls_loss": 3.23334,
+        "val_dfl_loss": 1.01165
+      }
+    },
+    {
+      "tag": "y8n_320_lightaug",
+      "run_name": "buoi4_experiments_y8n_320_lightaug",
+      "weights_init": "yolov8n.pt",
+      "imgsz": 320,
+      "augment": {
+        "hsv_h": 0.01,
+        "hsv_s": 0.5,
+        "hsv_v": 0.3,
+        "degrees": 5.0,
+        "mosaic": 0.5
+      },
+      "results_csv": "experiments\\buoi4_experiments_y8n_320_lightaug\\results.csv",
+      "weights_best": "D:\\ComputerVisionPj\\experiments\\buoi4_experiments_y8n_320_lightaug\\weights\\best.pt",
+      "weights_last": "D:\\ComputerVisionPj\\experiments\\buoi4_experiments_y8n_320_lightaug\\weights\\last.pt",
+      "metrics_last_epoch": {
+        "precision": 0.00433,
+        "recall": 0.84271,
+        "map50": 0.04309,
+        "map50_95": 0.01778,
+        "train_box_loss": 1.26839,
+        "train_cls_loss": 2.05122,
+        "train_dfl_loss": 1.05138,
+        "val_box_loss": 0.94866,
+        "val_cls_loss": 3.1603,
+        "val_dfl_loss": 0.95005
+      }
+    }
+  ],
+  "best_by_map": {
+    "run_name": "buoi4_experiments_y8n_416_default",
+    "score": 0.07741
+  }
+}

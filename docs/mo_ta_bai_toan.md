@@ -76,7 +76,7 @@ Mẫu regex tham khảo ban đầu (sẽ điều chỉnh sau theo thực nghiệ
 Một số lỗi OCR dự đoán có thể xảy ra:
 
 - Nhầm lẫn giữa chữ cái và chữ số: `O` ↔ `0`, `I` ↔ `1`, `S` ↔ `5`.
-+- Thiếu dấu gạch ngang hoặc dấu chấm nhưng phần số vẫn đúng.
+- Thiếu dấu gạch ngang hoặc dấu chấm nhưng phần số vẫn đúng.
 
 Các quy tắc này sẽ được dùng ở bước hậu xử lý để sửa một số lỗi đơn giản từ kết quả OCR.
 
@@ -107,4 +107,12 @@ Pipeline tổng thể của hệ thống được mô tả bằng các bước s
 - **Buổi 5**: Tích hợp OCR + hậu xử lý, đánh giá end-to-end trên ≥ 200 ảnh biển số thực tế.
 - **Buổi 6**: Xây dựng demo (CLI/web/GUI), chạy với video/webcam, sửa lỗi phát sinh.
 - **Buổi 7**: Hoàn thiện báo cáo, slide, diễn tập bảo vệ, đóng gói mã nguồn và hướng dẫn chạy.
+
+## 8. Buổi 3 — Detector baseline (lệnh tham chiếu)
+
+- **Cấu hình dataset**: `data/data.yaml`, splits trong `data/splits/`.
+- **Huấn luyện**: `python -m src.detector.train_baseline` — thử nhanh `--epochs 3`; baseline đủ theo kế hoạch buổi 3: `--epochs 50` (có GPU), kèm `--val-initial` nếu cần metric trước train.
+- **Inference** (ảnh / thư mục / video / tập test): `python -m src.detector.infer_baseline --weights <best.pt> --source <ảnh hoặc thư mục>` hoặc `--from-split test --max-images 20 --name infer_test_sample`.
+- **Phân tích TP/FP/FN**: `python -m src.detector.analyze_detection_errors --weights <best.pt>` (mặc định val); thêm `--split-file data/splits/test.txt` cho tập test.
+- **Notebook**: `notebooks/eda_data.ipynb` — phần Buổi 3 tổng hợp metric, curves và ảnh inference mẫu.
 

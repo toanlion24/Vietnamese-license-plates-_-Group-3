@@ -1,0 +1,52 @@
+{
+  "init_source": "yolov8n.pt",
+  "from_scratch": false,
+  "data": "data\\data.yaml",
+  "epochs_requested": 1,
+  "imgsz": 640,
+  "batch": 8,
+  "metrics_before_train": {
+    "fitness": 6.0584936048359945e-05,
+    "metrics/mAP50(B)": 0.0003043794669935914,
+    "metrics/mAP50-95(B)": 6.0584936048359945e-05,
+    "metrics/precision(B)": 0.0005993663841082285,
+    "metrics/recall(B)": 0.01334604385128694
+  },
+  "epoch_1": {
+    "epoch": "1",
+    "time": "1309.54",
+    "train/box_loss": "1.04958",
+    "train/cls_loss": "1.50318",
+    "train/dfl_loss": "1.13548",
+    "metrics/precision(B)": "0.95954",
+    "metrics/recall(B)": "0.94566",
+    "metrics/mAP50(B)": "0.97928",
+    "metrics/mAP50-95(B)": "0.80284",
+    "val/box_loss": "0.62205",
+    "val/cls_loss": "0.91549",
+    "val/dfl_loss": "0.8917",
+    "lr/pg0": "0.000665004",
+    "lr/pg1": "0.000665004",
+    "lr/pg2": "0.000665004"
+  },
+  "epoch_last": {
+    "epoch": "1",
+    "time": "1309.54",
+    "train/box_loss": "1.04958",
+    "train/cls_loss": "1.50318",
+    "train/dfl_loss": "1.13548",
+    "metrics/precision(B)": "0.95954",
+    "metrics/recall(B)": "0.94566",
+    "metrics/mAP50(B)": "0.97928",
+    "metrics/mAP50-95(B)": "0.80284",
+    "val/box_loss": "0.62205",
+    "val/cls_loss": "0.91549",
+    "val/dfl_loss": "0.8917",
+    "lr/pg0": "0.000665004",
+    "lr/pg1": "0.000665004",
+    "lr/pg2": "0.000665004"
+  },
+  "results_csv": "experiments\\baseline_trial_1ep\\results.csv",
+  "weights_best": "experiments/baseline_trial_1ep/weights/best.pt",
+  "weights_last": "experiments/baseline_trial_1ep/weights/last.pt"
+}

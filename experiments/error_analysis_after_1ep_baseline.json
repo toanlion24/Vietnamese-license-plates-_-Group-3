@@ -1,0 +1,26 @@
+{
+  "weights": "experiments/baseline_trial_1ep/weights/best.pt",
+  "split_file": "data\\splits\\val.txt",
+  "images_scanned": 80,
+  "model_num_classes": 1,
+  "pred_class_filter": 0,
+  "conf": 0.25,
+  "iou_match": 0.5,
+  "tp": 87,
+  "fp": 7,
+  "fn": 1,
+  "micro_precision": 0.9255,
+  "micro_recall": 0.9886,
+  "top_failure_paths": [
+    "data/images/raw/plate_0958.png",
+    "data/images/raw/plate_2701.png",
+    "data/images/raw/plate_2648.png",
+    "data/images/raw/plate_2538.png",
+    "data/images/raw/plate_0103.png"
+  ],
+  "notes": [
+    "FP: box dự đoán không khớp GT (IoU < ngưỡng hoặc dư box).",
+    "FN: GT không có pred khớp IoU >= ngưỡng.",
+    "Với nhiều biển/ảnh, greedy matching có thể khác COCO mAP chính thức."
+  ]
+}

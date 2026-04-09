@@ -4,8 +4,8 @@
 
 - **Nhiệm vụ**:
   - Chuẩn bị dữ liệu YOLO (data.yaml, train/val/test split).
-  - Viết và chỉnh script huấn luyện YOLOv8.
-  - Chạy inference trên ảnh/video và lưu kết quả (bbox, confidence).
+  - Viết và chỉnh script huấn luyện YOLOv8 (`train_baseline.py`).
+  - Inference ảnh/thư mục/video/split (`infer_baseline.py`) và lưu kết quả (bbox, confidence).
 - **Phạm vi file**:
   - `src/detector/`
   - `data/`
