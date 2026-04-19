@@ -40,6 +40,10 @@ datakangle/
 data/images/
 data/labels/
 data/migration_from_datakangle.json
+data/migration_from_video_frames.json
 data/debug_aug/*
 !data/debug_aug/.gitkeep
+
+# Local raw video files (large; list sources in data/video_sources.json / DU_LIEU_README)
+vid/
 

@@ -8,6 +8,7 @@ Chạy từ gốc repo:
   python -m src.detector.infer_baseline --weights ... --source data/images/raw
   python -m src.detector.infer_baseline --weights ... --from-split test --max-images 20 --name infer_test_sample
   python -m src.detector.infer_baseline --weights yolov8n.pt --source video.mp4 --name coco_demo
+  python -m src.detector.infer_baseline --weights ... --from-video-collection giao_thong_vn --name infer_gtvn
 """
 
 from __future__ import annotations
@@ -16,6 +17,8 @@ import argparse
 from pathlib import Path
 
 from ultralytics import YOLO
+
+from src.preprocess.video_sources import get_collection_path, list_collection_videos
 
 
 def repo_root() -> Path:
@@ -57,6 +60,12 @@ def main() -> None:
         choices=("train", "val", "test"),
         help="Lấy danh sách ảnh từ data/splits/<split>.txt (đường dẫn tương đối repo)",
     )
+    src.add_argument(
+        "--from-video-collection",
+        type=str,
+        metavar="ID",
+        help="Thư mục video đã khai báo trong data/video_sources.json (vd. giao_thong_vn)",
+    )
     p.add_argument(
         "--max-images",
         type=int,
@@ -80,6 +89,14 @@ def main() -> None:
         mx = args.max_images if args.max_images > 0 else 10**9
         paths = paths_from_split(root, args.from_split, mx)
         source: str | list[str] = [str(x) for x in paths]
+    elif args.from_video_collection:
+        vdir = get_collection_path(args.from_video_collection, root=root)
+        if not vdir.is_dir():
+            raise SystemExit(f"Không thấy thư mục bộ video: {vdir}")
+        vids = list_collection_videos(args.from_video_collection, root=root)
+        if not vids:
+            raise SystemExit(f"Không có file .mp4/.mov/... trong: {vdir}")
+        source = str(vdir)
     else:
         assert args.source is not None
         source = args.source
